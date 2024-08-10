@@ -20,7 +20,7 @@ export const MoviePage = () => {
         <div className={styles.movie_section}>
             {
                 movies.map((movie) => (
-                    <CardMedia key={movie._id} movie={movie}/>
+                    <CardMedia key={movie._id} media={movie}/>
                 ))
             }
         </div>
