@@ -25,16 +25,20 @@ const CharacterPage = ({ typeMedia, titleMedia, mediaArray }: CharacterPageProps
 
         fetchMedia();
         const interval = setInterval(fetchMedia, 1000);
-        return () => clearInterval(interval); 
+        return () => clearInterval(interval);
     }, [id, typeMedia]);
-    
+
 
 
     return (
         <div className={styles.characterPage}>
             <div className={styles.title}>
-                <Fade>
-                    {titleMedia}
+                <Fade direction="left" triggerOnce={true}>
+                    <div className={styles.tit_efe}>
+                        <Fade>
+                            {titleMedia}
+                        </Fade>
+                    </div>
                 </Fade>
             </div>
 

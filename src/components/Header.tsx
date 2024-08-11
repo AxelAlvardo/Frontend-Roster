@@ -6,14 +6,13 @@ export const Header = () => {
     return (
         <>
             <header className={styles.header}>
-                <div>
+                <div className={styles.media_logo}>
                     <Fade direction='down' triggerOnce={true}>
-                        <input
-                            id='search'
-                            type="text"
-                            placeholder='Realiza una Búsqueda...'
-                            className={styles.search}
-                        />
+                        <img className={styles.logo} src="/image/logo.png" alt="logo" />
+                    </Fade>
+
+                    <Fade direction='down' triggerOnce={true} delay={200}>
+                        <h1 className={styles.title_app}>Media Roster</h1>
                     </Fade>
                 </div>
 
@@ -30,7 +29,7 @@ export const Header = () => {
                         <Link to={'/book'} className={styles.book}>Libros</Link>
                     </Fade>
                 </nav>
-            </header>   
+            </header >
         </>
     )
 }
