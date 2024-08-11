@@ -6,14 +6,6 @@
     justify-content: space-between;
 }
 
-.dec_1{
-    background-color: rgb(44, 44, 44);
-    padding: 10px;
-}
-.dec_2{
-    background-color: rgb(70, 70, 70);
-    padding: 10px;
-}
 
 .navbar{
     display: flex;
@@ -32,7 +24,6 @@
 
 .movie, .serie, .book {
     padding: 15px;
-    background-color: aquamarine;
     color: white;
     font-weight: 900;
     border-radius: 10px;
@@ -40,16 +31,15 @@
     text-align: center;
     padding: 20px 70px;
     transition: all.5s;
+    background-color: rgb(210, 24, 11);
+    font-size: 16px;
+    text-transform: uppercase;
 
     &:hover{
         transform: scale(1.05);
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     }
 }
-
-.movie{background-color: rgb(255, 174, 0);}
-.serie{background-color: rgb(210, 24, 11);}
-.book{background-color: rgb(69, 69, 243);}
 
 @media (max-width: 1300px) {
     .search{

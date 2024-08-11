@@ -8,9 +8,10 @@ import { Fade } from 'react-awesome-reveal'
 type SeriePageProps = {
   setTypeMedia: React.Dispatch<React.SetStateAction<string>>
   setTitleMedia: React.Dispatch<React.SetStateAction<string>>
+  setMediaArray: React.Dispatch<React.SetStateAction<MediaType[]>>
 }
 
-export const SeriePage = ({setTypeMedia, setTitleMedia} : SeriePageProps) => {
+export const SeriePage = ({setTypeMedia, setTitleMedia, setMediaArray} : SeriePageProps) => {
 
   const [series, setSeries] = useState<MediaType[]>([])
 
@@ -18,6 +19,7 @@ export const SeriePage = ({setTypeMedia, setTitleMedia} : SeriePageProps) => {
     const fetchSeries = async () => {
       const allSeries = await getAllSeries();
       setSeries(allSeries);
+      setMediaArray(allSeries)
     }
     fetchSeries();
   }, [])
