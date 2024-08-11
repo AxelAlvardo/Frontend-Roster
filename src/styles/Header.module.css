@@ -6,6 +6,15 @@
     justify-content: space-between;
 }
 
+.dec_1{
+    background-color: rgb(44, 44, 44);
+    padding: 10px;
+}
+.dec_2{
+    background-color: rgb(70, 70, 70);
+    padding: 10px;
+}
+
 .navbar{
     display: flex;
     gap: 20px;

@@ -17,9 +17,10 @@ export type CharacterType = {
 }
 
 export type MediaType = {
+    access: string
     _id: string;
     title: string;
     imageURL: string;
     characters: CharacterType[];
     __v: number;
-  };
+};
