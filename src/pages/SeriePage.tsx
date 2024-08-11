@@ -3,9 +3,14 @@ import styles from '../styles/Card.module.css'
 import { MediaType } from '../types'
 import { getAllSeries } from '../service/SeriesService'
 import { CardMedia } from '../components/CardMedia'
+import { Fade } from 'react-awesome-reveal'
 
+type SeriePageProps = {
+  setTypeMedia: React.Dispatch<React.SetStateAction<string>>
+  setTitleMedia: React.Dispatch<React.SetStateAction<string>>
+}
 
-export const SeriePage = () => {
+export const SeriePage = ({setTypeMedia, setTitleMedia} : SeriePageProps) => {
 
   const [series, setSeries] = useState<MediaType[]>([])
 
@@ -16,15 +21,15 @@ export const SeriePage = () => {
     }
     fetchSeries();
   }, [])
-
-  console.log(series);
   
 
   return (
     <div className={styles.movie_section}>
     {
         series.map((serie) => (
-            <CardMedia key={serie._id} media={serie}/>
+           <Fade direction='up' triggerOnce={true} cascade={true} key={serie._id}>
+             <CardMedia key={serie._id} media={serie} setTypeMedia={setTypeMedia} setTitleMedia={setTitleMedia}/>
+           </Fade>
         ))
     }
 </div>
