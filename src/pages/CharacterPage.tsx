@@ -7,6 +7,9 @@ import { CardCharacter } from "../components/CardCharacter";
 import { Fade } from "react-awesome-reveal";
 import ExpenseModal from "../components/ExpenseModal";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 type CharacterPageProps = {
     typeMedia: string
     titleMedia: string
@@ -28,14 +31,40 @@ const CharacterPage = ({ typeMedia, titleMedia, mediaArray }: CharacterPageProps
         return () => clearInterval(interval);
     }, [id, typeMedia]);
 
+    const notify = () => {
+        toast.success('Personaje Agregado', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
 
 
     return (
         <div className={styles.characterPage}>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            ></ToastContainer>
+
             <div className={styles.title}>
                 <Fade direction="left" triggerOnce={true}>
                     <div className={styles.tit_efe}>
-                        <Fade>
+                        <Fade triggerOnce={true}>
                             {titleMedia}
                         </Fade>
                     </div>
@@ -52,7 +81,7 @@ const CharacterPage = ({ typeMedia, titleMedia, mediaArray }: CharacterPageProps
                 }
             </div>
 
-            <ExpenseModal mediaArray={mediaArray} />
+            <ExpenseModal mediaArray={mediaArray} notify={notify}/>
         </div>
     );
 }
