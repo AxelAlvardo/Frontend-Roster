@@ -7,9 +7,10 @@ import { MediaType } from '../types';
 
 type ExpenseModalProps = {
     mediaArray: MediaType[]
+    notify: ()=> void
 }
 
-export default function ExpenseModal({mediaArray} : ExpenseModalProps) {
+export default function ExpenseModal({mediaArray, notify} : ExpenseModalProps) {
 
     const{state, dispatch} = useRoster();    
 
@@ -51,9 +52,9 @@ export default function ExpenseModal({mediaArray} : ExpenseModalProps) {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-gray-800 p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="panel_form rounded-lg bg-white/5 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0">
 
-                                    <AddForm mediaArray={mediaArray}/>
+                                    <AddForm mediaArray={mediaArray} notify={notify}/>
 
                                 </Dialog.Panel>
                             </Transition.Child>

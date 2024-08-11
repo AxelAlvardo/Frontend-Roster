@@ -17,6 +17,14 @@
     }
 }
 
+.char_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .img{
     border-radius: 10px;
     width: 180px;
@@ -29,10 +37,20 @@
     justify-content: center;
     align-items: center;
     color: white;
+    width: 100%;
+    text-align: center;
 }
 
 .gender{
     color: #8b8888;
+}
+
+
+.dialog_img{
+    display: block;
+    width: 750px;
+    height: 430px;
+    border-radius: 20px;
 }
 
 @media (max-width: 650px) {
