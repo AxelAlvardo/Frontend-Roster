@@ -8,9 +8,10 @@ import { Fade } from 'react-awesome-reveal'
 type BookPageProps = {
   setTypeMedia: React.Dispatch<React.SetStateAction<string>>
   setTitleMedia: React.Dispatch<React.SetStateAction<string>>
+  setMediaArray: React.Dispatch<React.SetStateAction<MediaType[]>>
 }
 
-export const BookPage = ({setTypeMedia, setTitleMedia} : BookPageProps) => {
+export const BookPage = ({setTypeMedia, setTitleMedia, setMediaArray} : BookPageProps) => {
 
   const [books, setBooks] = useState<MediaType[]>([])
 
@@ -18,6 +19,7 @@ export const BookPage = ({setTypeMedia, setTitleMedia} : BookPageProps) => {
     const fetchBooks = async () => {
       const allBooks = await getAllBooks();
       setBooks(allBooks);
+      setMediaArray(allBooks)
     }
     fetchBooks();
   }, [])

@@ -8,9 +8,10 @@ import { Fade } from "react-awesome-reveal";
 type MoviePageProps = {
     setTypeMedia: React.Dispatch<React.SetStateAction<string>>
     setTitleMedia: React.Dispatch<React.SetStateAction<string>>
+    setMediaArray: React.Dispatch<React.SetStateAction<MediaType[]>>
 }
 
-export const MoviePage = ({setTypeMedia, setTitleMedia} : MoviePageProps) => {
+export const MoviePage = ({setTypeMedia, setTitleMedia, setMediaArray} : MoviePageProps) => {
 
     const [movies, setMovies] = useState<MediaType[]>([]);
 
@@ -18,6 +19,7 @@ export const MoviePage = ({setTypeMedia, setTitleMedia} : MoviePageProps) => {
         const fetchMovies = async () => {
             const allMovies = await getAllMovies();
             setMovies(allMovies);
+            setMediaArray(allMovies)
         }
         fetchMovies();
     }, [])

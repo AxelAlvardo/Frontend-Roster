@@ -30,9 +30,7 @@ export const Header = () => {
                         <Link to={'/book'} className={styles.book}>Libros</Link>
                     </Fade>
                 </nav>
-            </header>
-            <div className={styles.dec_1}></div>
-            <div className={styles.dec_2}></div>
+            </header>   
         </>
     )
 }

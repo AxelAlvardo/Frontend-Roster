@@ -1,0 +1,40 @@
+.card{
+    background-color: #232222;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .5s;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+.img{
+    border-radius: 10px;
+    width: 180px;
+    height: 250px;
+}
+
+.names_text{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.gender{
+    color: #8b8888;
+}
+
+@media (max-width: 650px) {
+
+}
