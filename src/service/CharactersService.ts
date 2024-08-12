@@ -22,7 +22,7 @@ export const getCharacters = async (id: MediaType['_id'], media: string) => {
 }
 
 
-export const createCharacter = async(formdata: DataType) => {
+export const createCharacter = async(formdata: FormData) => {
     try {
 
         const response = await axios.post(`${base}/characters`, formdata);

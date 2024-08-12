@@ -11,6 +11,7 @@ type BookPageProps = {
   setMediaArray: React.Dispatch<React.SetStateAction<MediaType[]>>
 }
 
+
 export const BookPage = ({setTypeMedia, setTitleMedia, setMediaArray} : BookPageProps) => {
 
   const [books, setBooks] = useState<MediaType[]>([])
