@@ -1,6 +1,6 @@
 # 🎬 Movie Roster
 
-¡Bienvenido a **Movie Roster**! Esta es una aplicación dinámica para gestionar y explorar películas, construida con tecnologías web modernas.
+¡Bienvenido a **Movie Roster**! Esta es una aplicación dinámica para gestionar y explorar películas, series y libros junto con sus personajes, construida con tecnologías web modernas.
 
 ## 🚀 Tecnologías Utilizadas
 
